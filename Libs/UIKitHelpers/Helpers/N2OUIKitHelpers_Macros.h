@@ -38,8 +38,8 @@
 //                                  Enjoy :)                                  //
 //----------------------------------------------------------------------------//
 
-#ifndef __N2OBoyz_UIKitHelpers_Helpers__N2OBoyz_UIKitHelpers_Macros__
-#define __N2OBoyz_UIKitHelpers_Helpers__N2OBoyz_UIKitHelpers_Macros__
+#ifndef __N2OBoyz_UIKitHelpers_Helpers__N2OUIKitHelpers_Macros__
+#define __N2OBoyz_UIKitHelpers_Helpers__N2OUIKitHelpers_Macros__
 
 // LOG //
 #ifdef DEBUG
