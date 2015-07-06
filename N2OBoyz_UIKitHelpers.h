@@ -43,10 +43,8 @@
 
 // Utils //
 #import "N2OUIKitHelpers_Macros.h"
-
 // Classes //
 #import "N2OAlertView.h"
-
 // Categories //
 #import "NSString+N2OStringExtensions.h"
 
