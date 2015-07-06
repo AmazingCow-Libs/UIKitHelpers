@@ -41,7 +41,7 @@
 //Headers
 #import "N2OAlertView.h"
 //Helpers
-#import "N2OBoyz_UIKitHelpers_Macros.h"
+#import "N2OUIKitHelpers_Macros.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 // _AlertViewDelegate                                                         //

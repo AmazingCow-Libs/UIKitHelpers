@@ -42,7 +42,7 @@
 #define __N2OBoyz_UIKitHelpers_Helpers__N2OBoyz_UIKitHelpers__
 
 // Utils //
-#import "N2OBoyz_UIKitHelpers_Macros.h"
+#import "N2OUIKitHelpers_Macros.h"
 
 // Classes //
 #import "N2OAlertView.h"
