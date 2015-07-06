@@ -48,5 +48,6 @@
 #import "N2OAlertView.h"
 // Categories //
 #import "NSString+N2OStringExtensions.h"
+#import "UIViewController+N2OViewControllerExtensions.h"
 
 #endif // defined( __N2OBoyz_UIKitHelpers_Helpers__N2OBoyz_UIKitHelpers__ ) //
