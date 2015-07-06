@@ -90,4 +90,10 @@
 // Some Useful Constants //
 #define kN2O_UKH_ArrayInvalidIndex -1
 
+// Some Useful MacroFunctions //
+#define N2O_UKH_UUID() [[NSUUID UUID] UUIDString]
+
+#define N2O_UKH_ENCODEOBJ(_coder_, _name_) [_coder_ encodeObject:_name_ forKey:@#_name_]
+#define N2O_UKH_DECODEOBJ(_decoder_, _name_) _name_ = [_decoder_ decodeObjectForKey:@#_name_]
+
 #endif // defined( __N2OBoyz_UIKitHelpers_Helpers__N2OBoyz_UIKitHelpers_Macros__ )
