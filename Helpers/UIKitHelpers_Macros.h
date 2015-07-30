@@ -44,29 +44,29 @@
 
 // LOG //
 #ifdef DEBUG
-    //N2OLog
-    #define N2OLog(FORMAT, ...) do { \
+    //COWLog
+    #define COWLog(FORMAT, ...) do { \
         fprintf(stderr,"%s\n", [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]); \
     } while(0)
-    //N2OSelfLog
-    #define N2OSelfLog(FORMAT, ...) do { \
+    //COWSelfLog
+    #define COWSelfLog(FORMAT, ...) do { \
         fprintf(stderr, "%s: ", [NSStringFromClass([self class]) UTF8String]); \
-        N2OLog(FORMAT, ##__VA_ARGS__);\
+        COWLog(FORMAT, ##__VA_ARGS__);\
     } while(0)
 
-    //N2OLog Error
-    #define N2OLog_Error(FORMAT, ...) do { \
+    //COWLog Error
+    #define COWLog_Error(FORMAT, ...) do { \
         fprintf(stderr,"%s\n", [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]); \
         exit(1); \
     } while(0)
 #else
-    #define N2OLog(...) do {} while (0)
-    #define N2OLog_Error(...) do { exit(1); } while(0)
+    #define COWLog(...) do {} while (0)
+    #define COWLog_Error(...) do { exit(1); } while(0)
 #endif
 
 // Singleton //
-#define N2O_UKH_INTERFACE_SINGLETON_OF(_type_) +(_type_ *)instance
-#define N2O_UKH_IMPLEMENTATION_SINGLETON_OF(_type_) \
+#define COW_UKH_INTERFACE_SINGLETON_OF(_type_) +(_type_ *)instance
+#define COW_UKH_IMPLEMENTATION_SINGLETON_OF(_type_) \
     +(_type_ *)instance                             \
     {                                               \
         static _type_ *s_instance = nil;            \
@@ -77,24 +77,24 @@
 
 // String Convertions //
 //char * -> NSString
-#define N2O_UKH_STR_C2NS(_str_) [NSString stringWithFormat:@"%s", _str_]
+#define COW_UKH_STR_C2NS(_str_) [NSString stringWithFormat:@"%s", _str_]
 //std::string -> NSString
-#define N2O_UKH_STR_CPP2NS(_str_) N2O_UKH_STR_C2NS(_str_.c_str())
+#define COW_UKH_STR_CPP2NS(_str_) COW_UKH_STR_C2NS(_str_.c_str())
 //NSString -> char *
-#define N2O_UKH_STR_NS2C(_str_) [_str_ UTF8String]
+#define COW_UKH_STR_NS2C(_str_) [_str_ UTF8String]
 //NSString -> std::string
-#define N2O_UKH_STR_NS2CPP(_str_) std::string(N2O_UKH_STR_NS2C(_str_))
+#define COW_UKH_STR_NS2CPP(_str_) std::string(COW_UKH_STR_NS2C(_str_))
 
 // CAST //
-#define N2O_UKH_VAR_CAST(_var_, _type_) ((_type_)(_var_))
+#define COW_UKH_VAR_CAST(_var_, _type_) ((_type_)(_var_))
 
 // Some Useful Constants //
-#define kN2O_UKH_ArrayInvalidIndex -1
+#define kCOW_UKH_ArrayInvalidIndex -1
 
 // Some Useful MacroFunctions //
-#define N2O_UKH_UUID() [[NSUUID UUID] UUIDString]
+#define COW_UKH_UUID() [[NSUUID UUID] UUIDString]
 
-#define N2O_UKH_ENCODEOBJ(_coder_, _name_) [_coder_ encodeObject:_name_ forKey:@#_name_]
-#define N2O_UKH_DECODEOBJ(_decoder_, _name_) _name_ = [_decoder_ decodeObjectForKey:@#_name_]
+#define COW_UKH_ENCODEOBJ(_coder_, _name_) [_coder_ encodeObject:_name_ forKey:@#_name_]
+#define COW_UKH_DECODEOBJ(_decoder_, _name_) _name_ = [_decoder_ decodeObjectForKey:@#_name_]
 
 #endif // defined( __N2OBoyz_UIKitHelpers_Helpers__N2OBoyz_UIKitHelpers_Macros__ )

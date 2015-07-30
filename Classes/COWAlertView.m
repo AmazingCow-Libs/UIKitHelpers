@@ -40,23 +40,23 @@
 //----------------------------------------------------------------------------//
 
 //Headers
-#import "N2OAlertView.h"
+#import "COWAlertView.h"
 //Helpers
-#import "N2OUIKitHelpers_Macros.h"
+#import "UIKitHelpers_Macros.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 // _AlertViewDelegate                                                         //
 ////////////////////////////////////////////////////////////////////////////////
 @interface _AlertViewDelegate : NSObject <UIAlertViewDelegate>
 //Properties
-@property (nonatomic, copy) N2OAlertViewCallbackBlock callback;
+@property (nonatomic, copy) COWAlertViewCallbackBlock callback;
 //Singleton
-N2O_UKH_INTERFACE_SINGLETON_OF(_AlertViewDelegate);
+COW_UKH_INTERFACE_SINGLETON_OF(_AlertViewDelegate);
 @end
 
 @implementation _AlertViewDelegate
 //Singleton
-N2O_UKH_IMPLEMENTATION_SINGLETON_OF(_AlertViewDelegate)
+COW_UKH_IMPLEMENTATION_SINGLETON_OF(_AlertViewDelegate)
 //UIAlertView Delegate
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
@@ -66,10 +66,10 @@ N2O_UKH_IMPLEMENTATION_SINGLETON_OF(_AlertViewDelegate)
 @end
 
 ////////////////////////////////////////////////////////////////////////////////
-// N2OAlertView                                                               //
+// COWAlertView                                                               //
 ////////////////////////////////////////////////////////////////////////////////
 // Implementation //
-@implementation N2OAlertView
+@implementation COWAlertView
 
 // One Button Alert View //
 //Without callback.
@@ -77,7 +77,7 @@ N2O_UKH_IMPLEMENTATION_SINGLETON_OF(_AlertViewDelegate)
                        message:(NSString *)msg
                    buttonTitle:(NSString *)buttonTitle
 {
-    [N2OAlertView showOneButtonWithTitle:title
+    [COWAlertView showOneButtonWithTitle:title
                                  message:msg
                              buttonTitle:buttonTitle
                                 callback:nil];
@@ -87,7 +87,7 @@ N2O_UKH_IMPLEMENTATION_SINGLETON_OF(_AlertViewDelegate)
 + (void)showOneButtonWithTitle:(NSString *)title
                        message:(NSString *)msg
                    buttonTitle:(NSString *)buttonTitle
-                      callback:(N2OAlertViewCallbackBlock)callback
+                      callback:(COWAlertViewCallbackBlock)callback
 {
     _AlertViewDelegate *delegate = [_AlertViewDelegate instance];
     delegate.callback = callback;
@@ -107,7 +107,7 @@ N2O_UKH_IMPLEMENTATION_SINGLETON_OF(_AlertViewDelegate)
                     cancelTitle:(NSString *)cancelTitle
                    confirmTitle:(NSString *)confirmTitle
 {
-    [N2OAlertView showTwoButtonsWithTitle:title
+    [COWAlertView showTwoButtonsWithTitle:title
                                   message:msg
                               cancelTitle:cancelTitle
                              confirmTitle:confirmTitle
@@ -118,7 +118,7 @@ N2O_UKH_IMPLEMENTATION_SINGLETON_OF(_AlertViewDelegate)
                         message:(NSString *)msg
                     cancelTitle:(NSString *)cancelTitle
                    confirmTitle:(NSString *)confirmTitle
-                       callback:(N2OAlertViewCallbackBlock)callback
+                       callback:(COWAlertViewCallbackBlock)callback
 {
     _AlertViewDelegate *delegate = [_AlertViewDelegate instance];
     delegate.callback = callback;

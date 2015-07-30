@@ -41,7 +41,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIViewController (N2OViewControllerExtensions)
+@interface UIViewController (COWViewControllerExtensions)
 
 + (UINavigationController *)createInsideNavController;
 - (UINavigationController *)embedInNavController;

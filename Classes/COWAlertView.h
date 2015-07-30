@@ -43,10 +43,10 @@
 #import <UIKit/UIKit.h>
 
 // Enums/Constants/Typedefs //
-typedef void (^N2OAlertViewCallbackBlock)(NSInteger, NSString *);
+typedef void (^COWAlertViewCallbackBlock)(NSInteger, NSString *);
 
 // Public Interface //
-@interface N2OAlertView : NSObject
+@interface COWAlertView : NSObject
 
 // One Button Alert View //
 //Without callback.
@@ -57,7 +57,7 @@ typedef void (^N2OAlertViewCallbackBlock)(NSInteger, NSString *);
 + (void)showOneButtonWithTitle:(NSString *)title
                        message:(NSString *)msg
                    buttonTitle:(NSString *)buttonTitle
-                      callback:(N2OAlertViewCallbackBlock)callback;
+                      callback:(COWAlertViewCallbackBlock)callback;
 
 // Two Button Alert View //
 //Without callback.
@@ -70,5 +70,5 @@ typedef void (^N2OAlertViewCallbackBlock)(NSInteger, NSString *);
                         message:(NSString *)msg
                     cancelTitle:(NSString *)cancelTitle
                    confirmTitle:(NSString *)confirmTitle
-                       callback:(N2OAlertViewCallbackBlock)callback;
+                       callback:(COWAlertViewCallbackBlock)callback;
 @end

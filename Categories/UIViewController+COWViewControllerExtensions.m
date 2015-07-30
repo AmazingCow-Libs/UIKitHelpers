@@ -39,9 +39,9 @@
 //                                  Enjoy :)                                  //
 //----------------------------------------------------------------------------//
 
-#import "UIViewController+N2OViewControllerExtensions.h"
+#import "UIViewController+COWViewControllerExtensions.h"
 
-@implementation UIViewController (N2OViewControllerExtensions)
+@implementation UIViewController (COWViewControllerExtensions)
 
 + (UINavigationController *)createInsideNavController
 {
