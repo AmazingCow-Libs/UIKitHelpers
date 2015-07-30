@@ -39,9 +39,6 @@
 //                                  Enjoy :)                                  //
 //----------------------------------------------------------------------------//
 
-#ifndef __N2OBoyz_UIKitHelpers_Helpers__N2OUIKitHelpers_Macros__
-#define __N2OBoyz_UIKitHelpers_Helpers__N2OUIKitHelpers_Macros__
-
 // LOG //
 #ifdef DEBUG
     //COWLog
@@ -96,5 +93,3 @@
 
 #define COW_UKH_ENCODEOBJ(_coder_, _name_) [_coder_ encodeObject:_name_ forKey:@#_name_]
 #define COW_UKH_DECODEOBJ(_decoder_, _name_) _name_ = [_decoder_ decodeObjectForKey:@#_name_]
-
-#endif // defined( __N2OBoyz_UIKitHelpers_Helpers__N2OBoyz_UIKitHelpers_Macros__ )

@@ -40,10 +40,10 @@
 //----------------------------------------------------------------------------//
 
 //Header
-#import "NSString+N2OStringExtensions.h"
+#import "NSString+COWStringExtensions.h"
 
 // Implementation //
-@implementation NSString (N2OStringExtensions)
+@implementation NSString (COWStringExtensions)
 
 - (NSString *)trimWhitespaces
 {

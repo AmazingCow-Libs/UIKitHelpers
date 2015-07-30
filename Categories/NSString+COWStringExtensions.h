@@ -43,7 +43,7 @@
 #import <Foundation/Foundation.h>
 
 // Public Interface //
-@interface NSString (N2OStringExtensions)
+@interface NSString (COWStringExtensions)
 
 - (NSString *)trimWhitespaces;
 - (NSString *)trimWhitespacesAndNewLines;
