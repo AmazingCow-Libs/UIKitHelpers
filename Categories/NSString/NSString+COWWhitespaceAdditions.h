@@ -1,18 +1,17 @@
 //----------------------------------------------------------------------------//
-//                 █      █                                                   //
-//                 ████████                                                   //
-//               ██        ██                                                 //
-//              ███  █  █  ███    NSString+COWStringExtensions.m              //
-//              █ █        █ █    UIKitHelpers                                //
-//               ████████████                                                 //
-//             █              █   Copyright (c) 2015 AmazingCow               //
-//            █     █    █     █  www.AmazingCow.com                          //
-//            █     █    █     █                                              //
-//             █              █   N2OMatt - n2omatt@amazingcow.com            //
-//               ████████████     www.amazingcow.com/n2omatt                  //
+//               █      █                                                     //
+//               ████████                                                     //
+//             ██        ██                                                   //
+//            ███  █  █  ███        NSString+COWWhitespaceAdditions.h         //
+//            █ █        █ █        UIKitHelpers                              //
+//             ████████████                                                   //
+//           █              █       Copyright (c) 2015, 2016                  //
+//          █     █    █     █      AmazingCow - www.AmazingCow.com           //
+//          █     █    █     █                                                //
+//           █              █       N2OMatt - n2omatt@amazingcow.com          //
+//             ████████████         www.amazingcow.com/n2omatt                //
 //                                                                            //
-//                                                                            //
-//                  This software is licensed as LGPL-v3                      //
+//                  This software is licensed as GPLv3                        //
 //                 CHECK THE COPYING FILE TO MORE DETAILS                     //
 //                                                                            //
 //    Permission is granted to anyone to use this software for any purpose,   //
@@ -27,7 +26,7 @@
 //        (See opensource.AmazingCow.com/acknowledgment.html for details).    //
 //        If you will not acknowledge, just send us a email. We'll be         //
 //        *VERY* happy to see our work being used by other people. :)         //
-//        The email is: acknowledgment.opensource@AmazingCow.com              //
+//        The email is: acknowledgment_opensource@AmazingCow.com              //
 //     3. Altered source versions must be plainly marked as such,             //
 //        and must notbe misrepresented as being the original software.       //
 //     4. This notice may not be removed or altered from any source           //
@@ -39,29 +38,15 @@
 //                                  Enjoy :)                                  //
 //----------------------------------------------------------------------------//
 
-//Header
-#import "NSString+COWStringExtensions.h"
+// Foundation //
+#import <Foundation/Foundation.h>
 
-// Implementation //
-@implementation NSString (COWStringExtensions)
+// Public Interface //
+@interface NSString (COWWhitespaceAdditions)
 
-- (NSString *)trimWhitespaces
-{
-    NSCharacterSet *set = [NSCharacterSet whitespaceCharacterSet];
-    return [self stringByTrimmingCharactersInSet:set];
-}
-- (NSString *)trimWhitespacesAndNewLines
-{
-    NSCharacterSet *set = [NSCharacterSet whitespaceAndNewlineCharacterSet];
-    return [self stringByTrimmingCharactersInSet:set];
-}
-- (BOOL)hasOnlyWhitespaces
-{
-    return [[self trimWhitespaces] length] == 0;
-}
-- (BOOL)hasOnlyWhitespacesOrNewLines
-{
-    return [[self trimWhitespacesAndNewLines] length] == 0;
-}
+- (NSString *)cow_trimWhitespaces;
+- (NSString *)cow_trimWhitespacesAndNewLines;
+- (BOOL)cow_hasOnlyWhitespaces;
+- (BOOL)cow_hasOnlyWhitespacesOrNewLines;
 
 @end
