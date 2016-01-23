@@ -37,6 +37,7 @@
 //                                                                            //
 //                                  Enjoy :)                                  //
 //----------------------------------------------------------------------------//
+
 //Header
 #import "NSString+COWWhitespaceAdditions.h"
 
@@ -53,6 +54,7 @@
     NSCharacterSet *set = [NSCharacterSet whitespaceAndNewlineCharacterSet];
     return [self stringByTrimmingCharactersInSet:set];
 }
+
 - (BOOL)cow_hasOnlyWhitespaces
 {
     return [[self trimWhitespaces] length] == 0;
