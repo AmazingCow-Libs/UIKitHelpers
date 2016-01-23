@@ -2,7 +2,7 @@
 //               █      █                                                     //
 //               ████████                                                     //
 //             ██        ██                                                   //
-//            ███  █  █  ███        COWAlertView.h                            //
+//            ███  █  █  ███        COW_UIKitHelpers.h                        //
 //            █ █        █ █        UIKitHelpers                              //
 //             ████████████                                                   //
 //           █              █       Copyright (c) 2015, 2016                  //
@@ -38,37 +38,11 @@
 //                                  Enjoy :)                                  //
 //----------------------------------------------------------------------------//
 
-// UIKit //
-#import <UIKit/UIKit.h>
+// Macros //
+#import "COW_UIKitHelpers_Macros.h" //This is a umbrella header for all macros.
 
-// Enums/Constants/Typedefs //
-typedef void (^COWAlertViewCallbackBlock)(NSInteger, NSString *);
+// Classes //
+#import "COWAlertView.h"
 
-// Public Interface //
-@interface COWAlertView : NSObject
-
-// One Button Alert View //
-//Without callback.
-+ (void)showOneButtonWithTitle:(NSString *)title
-                       message:(NSString *)msg
-                   buttonTitle:(NSString *)buttonTitle;
-//With callback.
-+ (void)showOneButtonWithTitle:(NSString *)title
-                       message:(NSString *)msg
-                   buttonTitle:(NSString *)buttonTitle
-                      callback:(COWAlertViewCallbackBlock)callback;
-
-
-// Two Button Alert View //
-//Without callback.
-+ (void)showTwoButtonsWithTitle:(NSString *)title
-                        message:(NSString *)msg
-                    cancelTitle:(NSString *)cancelTitle
-                   confirmTitle:(NSString *)confirmTitle;
-//With callback.
-+ (void)showTwoButtonsWithTitle:(NSString *)title
-                        message:(NSString *)msg
-                    cancelTitle:(NSString *)cancelTitle
-                   confirmTitle:(NSString *)confirmTitle
-                       callback:(COWAlertViewCallbackBlock)callback;
-@end
+// Categories //
+#import "NSString+COWWhitespaceAdditions.h"

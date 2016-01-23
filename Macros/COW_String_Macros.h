@@ -2,7 +2,7 @@
 //               █      █                                                     //
 //               ████████                                                     //
 //             ██        ██                                                   //
-//            ███  █  █  ███        COWAlertView.h                            //
+//            ███  █  █  ███        COW_String_Macros.h                       //
 //            █ █        █ █        UIKitHelpers                              //
 //             ████████████                                                   //
 //           █              █       Copyright (c) 2015, 2016                  //
@@ -38,37 +38,14 @@
 //                                  Enjoy :)                                  //
 //----------------------------------------------------------------------------//
 
-// UIKit //
-#import <UIKit/UIKit.h>
+//char * -> NSString
+#define COW_UKH_STR_C2NS(_str_) [NSString stringWithFormat:@"%s", _str_]
 
-// Enums/Constants/Typedefs //
-typedef void (^COWAlertViewCallbackBlock)(NSInteger, NSString *);
+//std::string -> NSString
+#define COW_UKH_STR_CPP2NS(_str_) COW_UKH_STR_C2NS(_str_.c_str())
 
-// Public Interface //
-@interface COWAlertView : NSObject
+//NSString -> char *
+#define COW_UKH_STR_NS2C(_str_) [_str_ UTF8String]
 
-// One Button Alert View //
-//Without callback.
-+ (void)showOneButtonWithTitle:(NSString *)title
-                       message:(NSString *)msg
-                   buttonTitle:(NSString *)buttonTitle;
-//With callback.
-+ (void)showOneButtonWithTitle:(NSString *)title
-                       message:(NSString *)msg
-                   buttonTitle:(NSString *)buttonTitle
-                      callback:(COWAlertViewCallbackBlock)callback;
-
-
-// Two Button Alert View //
-//Without callback.
-+ (void)showTwoButtonsWithTitle:(NSString *)title
-                        message:(NSString *)msg
-                    cancelTitle:(NSString *)cancelTitle
-                   confirmTitle:(NSString *)confirmTitle;
-//With callback.
-+ (void)showTwoButtonsWithTitle:(NSString *)title
-                        message:(NSString *)msg
-                    cancelTitle:(NSString *)cancelTitle
-                   confirmTitle:(NSString *)confirmTitle
-                       callback:(COWAlertViewCallbackBlock)callback;
-@end
+//NSString -> std::string
+#define COW_UKH_STR_NS2CPP(_str_) std::string(COW_UKH_STR_NS2C(_str_))

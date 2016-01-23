@@ -1,18 +1,17 @@
 //----------------------------------------------------------------------------//
-//             █      █                                                       //
-//             ████████                                                       //
-//           ██        ██                                                     //
-//          ███  █  █  ███    UIViewController+COWViewControllerExtensions.m  //
-//          █ █        █ █    UIKitHelpers                                    //
-//           ████████████                                                     //
-//         █              █   Copyright (c) 2015 AmazingCow                   //
-//        █     █    █     █  www.AmazingCow.com                              //
-//        █     █    █     █                                                  //
-//         █              █   N2OMatt - n2omatt@amazingcow.com                //
-//           ████████████     www.amazingcow.com/n2omatt                      //
+//               █      █                                                     //
+//               ████████                                                     //
+//             ██        ██                                                   //
+//            ███  █  █  ███        COW_UIKitHelper_Macros.h                  //
+//            █ █        █ █        UIKitHelpers                              //
+//             ████████████                                                   //
+//           █              █       Copyright (c) 2015, 2016                  //
+//          █     █    █     █      AmazingCow - www.AmazingCow.com           //
+//          █     █    █     █                                                //
+//           █              █       N2OMatt - n2omatt@amazingcow.com          //
+//             ████████████         www.amazingcow.com/n2omatt                //
 //                                                                            //
-//                                                                            //
-//                  This software is licensed as LGPL-v3                      //
+//                  This software is licensed as GPLv3                        //
 //                 CHECK THE COPYING FILE TO MORE DETAILS                     //
 //                                                                            //
 //    Permission is granted to anyone to use this software for any purpose,   //
@@ -27,7 +26,7 @@
 //        (See opensource.AmazingCow.com/acknowledgment.html for details).    //
 //        If you will not acknowledge, just send us a email. We'll be         //
 //        *VERY* happy to see our work being used by other people. :)         //
-//        The email is: acknowledgment.opensource@AmazingCow.com              //
+//        The email is: acknowledgment_opensource@AmazingCow.com              //
 //     3. Altered source versions must be plainly marked as such,             //
 //        and must notbe misrepresented as being the original software.       //
 //     4. This notice may not be removed or altered from any source           //
@@ -39,16 +38,13 @@
 //                                  Enjoy :)                                  //
 //----------------------------------------------------------------------------//
 
-#import "UIViewController+COWViewControllerExtensions.h"
+// An umbrella header to import all other Macro headers //
 
-@implementation UIViewController (COWViewControllerExtensions)
+#import "COW_Cast_Macros.h"
+#import "COW_Debug_Macros.h"
+#import "COW_Log_Macros.h"
+#import "COW_String_Macros.h"
 
-+ (UINavigationController *)createInsideNavController
-{
-    return [[[self alloc] init] embedInNavController];
-}
-- (UINavigationController *)embedInNavController
-{
-    return [[UINavigationController alloc] initWithRootViewController:self];
-}
-@end
+//Macros that dont't fit in other headers yet.
+#import "COW_Other_Macros.h"
+

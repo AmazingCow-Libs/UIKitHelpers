@@ -1,18 +1,17 @@
 //----------------------------------------------------------------------------//
-//                 █      █                                                   //
-//                 ████████                                                   //
-//               ██        ██                                                 //
-//              ███  █  █  ███    UIKitHelpers.h                              //
-//              █ █        █ █    UIKitHelpers                                //
-//               ████████████                                                 //
-//             █              █   Copyright (c) 2015 AmazingCow               //
-//            █     █    █     █  www.AmazingCow.com                          //
-//            █     █    █     █                                              //
-//             █              █   N2OMatt - n2omatt@amazingcow.com            //
-//               ████████████     www.amazingcow.com/n2omatt                  //
+//               █      █                                                     //
+//               ████████                                                     //
+//             ██        ██                                                   //
+//            ███  █  █  ███        COW_Debug_Macros.h                        //
+//            █ █        █ █        UIKitHelpers                              //
+//             ████████████                                                   //
+//           █              █       Copyright (c) 2015, 2016                  //
+//          █     █    █     █      AmazingCow - www.AmazingCow.com           //
+//          █     █    █     █                                                //
+//           █              █       N2OMatt - n2omatt@amazingcow.com          //
+//             ████████████         www.amazingcow.com/n2omatt                //
 //                                                                            //
-//                                                                            //
-//                  This software is licensed as LGPL-v3                      //
+//                  This software is licensed as GPLv3                        //
 //                 CHECK THE COPYING FILE TO MORE DETAILS                     //
 //                                                                            //
 //    Permission is granted to anyone to use this software for any purpose,   //
@@ -27,7 +26,7 @@
 //        (See opensource.AmazingCow.com/acknowledgment.html for details).    //
 //        If you will not acknowledge, just send us a email. We'll be         //
 //        *VERY* happy to see our work being used by other people. :)         //
-//        The email is: acknowledgment.opensource@AmazingCow.com              //
+//        The email is: acknowledgment_opensource@AmazingCow.com              //
 //     3. Altered source versions must be plainly marked as such,             //
 //        and must notbe misrepresented as being the original software.       //
 //     4. This notice may not be removed or altered from any source           //
@@ -39,15 +38,17 @@
 //                                  Enjoy :)                                  //
 //----------------------------------------------------------------------------//
 
-#ifndef __N2OBoyz_UIKitHelpers_Helpers__N2OBoyz_UIKitHelpers__
-#define __N2OBoyz_UIKitHelpers_Helpers__N2OBoyz_UIKitHelpers__
+////////////////////////////////////////////////////////////////////////////////
+// Singleton                                                                  //
+////////////////////////////////////////////////////////////////////////////////
+#define COW_UKH_INTERFACE_SINGLETON_OF(_type_) +(_type_ *)instance
 
-// Utils //
-#import "N2OUIKitHelpers_Macros.h"
-// Classes //
-#import "N2OAlertView.h"
-// Categories //
-#import "NSString+N2OStringExtensions.h"
-#import "UIViewController+N2OViewControllerExtensions.h"
-
-#endif // defined( __N2OBoyz_UIKitHelpers_Helpers__N2OBoyz_UIKitHelpers__ ) //
+//COWTODO: Should use dispatch once.
+#define COW_UKH_IMPLEMENTATION_SINGLETON_OF(_type_) \
+    +(_type_ *)instance                             \
+    {                                               \
+        static _type_ *s_instance = nil;            \
+        if(s_instance == nil)                       \
+            s_instance = [[_type_ alloc] init];     \
+        return s_instance;                          \
+}

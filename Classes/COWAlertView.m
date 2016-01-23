@@ -1,18 +1,17 @@
 //----------------------------------------------------------------------------//
-//                 █      █                                                   //
-//                 ████████                                                   //
-//               ██        ██                                                 //
-//              ███  █  █  ███    COWAlertView.m                              //
-//              █ █        █ █    UIKitHelpers                                //
-//               ████████████                                                 //
-//             █              █   Copyright (c) 2015 AmazingCow               //
-//            █     █    █     █  www.AmazingCow.com                          //
-//            █     █    █     █                                              //
-//             █              █   N2OMatt - n2omatt@amazingcow.com            //
-//               ████████████     www.amazingcow.com/n2omatt                  //
+//               █      █                                                     //
+//               ████████                                                     //
+//             ██        ██                                                   //
+//            ███  █  █  ███        COWAlertView.h                            //
+//            █ █        █ █        UIKitHelpers                              //
+//             ████████████                                                   //
+//           █              █       Copyright (c) 2015, 2016                  //
+//          █     █    █     █      AmazingCow - www.AmazingCow.com           //
+//          █     █    █     █                                                //
+//           █              █       N2OMatt - n2omatt@amazingcow.com          //
+//             ████████████         www.amazingcow.com/n2omatt                //
 //                                                                            //
-//                                                                            //
-//                  This software is licensed as LGPL-v3                      //
+//                  This software is licensed as GPLv3                        //
 //                 CHECK THE COPYING FILE TO MORE DETAILS                     //
 //                                                                            //
 //    Permission is granted to anyone to use this software for any purpose,   //
@@ -27,7 +26,7 @@
 //        (See opensource.AmazingCow.com/acknowledgment.html for details).    //
 //        If you will not acknowledge, just send us a email. We'll be         //
 //        *VERY* happy to see our work being used by other people. :)         //
-//        The email is: acknowledgment.opensource@AmazingCow.com              //
+//        The email is: acknowledgment_opensource@AmazingCow.com              //
 //     3. Altered source versions must be plainly marked as such,             //
 //        and must notbe misrepresented as being the original software.       //
 //     4. This notice may not be removed or altered from any source           //
@@ -42,28 +41,38 @@
 //Headers
 #import "COWAlertView.h"
 //Helpers
-#import "UIKitHelpers_Macros.h"
+#import "COW_UIKitHelper_Macros.h"
 
 ////////////////////////////////////////////////////////////////////////////////
-// _AlertViewDelegate                                                         //
+// COW_PRIVATE_AlertViewDelegate                                              //
 ////////////////////////////////////////////////////////////////////////////////
-@interface _AlertViewDelegate : NSObject <UIAlertViewDelegate>
+@interface COW_PRIVATE_AlertViewDelegate : NSObject
+  <UIAlertViewDelegate>
+
 //Properties
 @property (nonatomic, copy) COWAlertViewCallbackBlock callback;
+
 //Singleton
-COW_UKH_INTERFACE_SINGLETON_OF(_AlertViewDelegate);
+COW_UKH_INTERFACE_SINGLETON_OF(COW_PRIVATE_AlertViewDelegate);
+
 @end
 
-@implementation _AlertViewDelegate
+
+@implementation COW_PRIVATE_AlertViewDelegate
+
 //Singleton
-COW_UKH_IMPLEMENTATION_SINGLETON_OF(_AlertViewDelegate)
+COW_UKH_IMPLEMENTATION_SINGLETON_OF(COW_PRIVATE_AlertViewDelegate)
+
 //UIAlertView Delegate
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+- (void)alertView:(UIAlertView *)alertView
+    clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if(self.callback)
         self.callback(buttonIndex, [alertView buttonTitleAtIndex:buttonIndex]);
 }
+
 @end
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // COWAlertView                                                               //
@@ -89,9 +98,11 @@ COW_UKH_IMPLEMENTATION_SINGLETON_OF(_AlertViewDelegate)
                    buttonTitle:(NSString *)buttonTitle
                       callback:(COWAlertViewCallbackBlock)callback
 {
-    _AlertViewDelegate *delegate = [_AlertViewDelegate instance];
+    COW_PRIVATE_AlertViewDelegate *delegate = [COW_PRIVATE_AlertViewDelegate instance];
     delegate.callback = callback;
 
+    //Create and show the UIAlertView with the
+    //COW_PRIVATE_AlertViewDelegate delegate.
     [[[UIAlertView alloc] initWithTitle:title
                                 message:msg
                                delegate:delegate
@@ -113,6 +124,7 @@ COW_UKH_IMPLEMENTATION_SINGLETON_OF(_AlertViewDelegate)
                              confirmTitle:confirmTitle
                                  callback:nil];
 }
+
 //With callback.
 + (void)showTwoButtonsWithTitle:(NSString *)title
                         message:(NSString *)msg
@@ -120,9 +132,11 @@ COW_UKH_IMPLEMENTATION_SINGLETON_OF(_AlertViewDelegate)
                    confirmTitle:(NSString *)confirmTitle
                        callback:(COWAlertViewCallbackBlock)callback
 {
-    _AlertViewDelegate *delegate = [_AlertViewDelegate instance];
+    COW_PRIVATE_AlertViewDelegate *delegate = [COW_PRIVATE_AlertViewDelegate instance];
     delegate.callback = callback;
 
+    //Create and show the UIAlertView with the
+    //COW_PRIVATE_AlertViewDelegate delegate.
     [[[UIAlertView alloc] initWithTitle:title
                                 message:msg
                                delegate:delegate

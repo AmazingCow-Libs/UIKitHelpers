@@ -2,7 +2,7 @@
 //               █      █                                                     //
 //               ████████                                                     //
 //             ██        ██                                                   //
-//            ███  █  █  ███        COWAlertView.h                            //
+//            ███  █  █  ███        COW_Cast_Macros.h                         //
 //            █ █        █ █        UIKitHelpers                              //
 //             ████████████                                                   //
 //           █              █       Copyright (c) 2015, 2016                  //
@@ -38,37 +38,6 @@
 //                                  Enjoy :)                                  //
 //----------------------------------------------------------------------------//
 
-// UIKit //
-#import <UIKit/UIKit.h>
-
-// Enums/Constants/Typedefs //
-typedef void (^COWAlertViewCallbackBlock)(NSInteger, NSString *);
-
-// Public Interface //
-@interface COWAlertView : NSObject
-
-// One Button Alert View //
-//Without callback.
-+ (void)showOneButtonWithTitle:(NSString *)title
-                       message:(NSString *)msg
-                   buttonTitle:(NSString *)buttonTitle;
-//With callback.
-+ (void)showOneButtonWithTitle:(NSString *)title
-                       message:(NSString *)msg
-                   buttonTitle:(NSString *)buttonTitle
-                      callback:(COWAlertViewCallbackBlock)callback;
+#define COW_UKH_VAR_CAST(_var_, _type_) ((_type_)(_var_))
 
 
-// Two Button Alert View //
-//Without callback.
-+ (void)showTwoButtonsWithTitle:(NSString *)title
-                        message:(NSString *)msg
-                    cancelTitle:(NSString *)cancelTitle
-                   confirmTitle:(NSString *)confirmTitle;
-//With callback.
-+ (void)showTwoButtonsWithTitle:(NSString *)title
-                        message:(NSString *)msg
-                    cancelTitle:(NSString *)cancelTitle
-                   confirmTitle:(NSString *)confirmTitle
-                       callback:(COWAlertViewCallbackBlock)callback;
-@end
