@@ -46,3 +46,5 @@
 
 // Categories //
 #import "NSString+COWWhitespaceAdditions.h"
+#import "UIButton+COWBackgroundColorAdditions.h"
+#import "UIImage+COWColorAdditions.h"
