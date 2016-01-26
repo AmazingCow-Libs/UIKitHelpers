@@ -51,4 +51,4 @@
         if(s_instance == nil)                       \
             s_instance = [[_type_ alloc] init];     \
         return s_instance;                          \
-}
+    }
