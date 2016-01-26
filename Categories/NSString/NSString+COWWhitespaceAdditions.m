@@ -57,11 +57,11 @@
 
 - (BOOL)cow_hasOnlyWhitespaces
 {
-    return [[self trimWhitespaces] length] == 0;
+    return [[self cow_trimWhitespaces] length] == 0;
 }
 - (BOOL)cow_hasOnlyWhitespacesOrNewLines
 {
-    return [[self trimWhitespacesAndNewLines] length] == 0;
+    return [[self cow_trimWhitespacesAndNewLines] length] == 0;
 }
 
 @end
