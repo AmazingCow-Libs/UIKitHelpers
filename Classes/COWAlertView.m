@@ -41,7 +41,7 @@
 //Headers
 #import "COWAlertView.h"
 //Helpers
-#import "COW_UIKitHelper_Macros.h"
+#import "COW_UIKitHelpers_Macros.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 // COW_PRIVATE_AlertViewDelegate                                              //
