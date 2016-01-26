@@ -38,4 +38,5 @@
 //                                  Enjoy :)                                  //
 //----------------------------------------------------------------------------//
 
+//COWTODO: Implement.
 #define COW_UKH_ONLY_IN_DEBUG(_code_block_)
