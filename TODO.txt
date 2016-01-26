@@ -1,0 +1,5 @@
+UIColor:
+   + colorFromHexString:hex
+   + colorFromHexRed: hexGreen: hexBlue:
+   - hexString
+
