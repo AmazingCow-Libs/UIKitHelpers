@@ -2,7 +2,7 @@
 //               █      █                                                     //
 //               ████████                                                     //
 //             ██        ██                                                   //
-//            ███  █  █  ███        COW_UIKitHelpers.h                        //
+//            ███  █  █  ███        UIButton+COWHexStringAdditions.m          //
 //            █ █        █ █        UIKitHelpers                              //
 //             ████████████                                                   //
 //           █              █       Copyright (c) 2015, 2016                  //
@@ -38,18 +38,65 @@
 //                                  Enjoy :)                                  //
 //----------------------------------------------------------------------------//
 
-// Macros //
-#import "COW_UIKitHelpers_Macros.h" //This is a umbrella header for all macros.
-
-// Classes //
-#import "COWAlertView.h"
-
-// Categories //
-//NSString
-#import "NSString+COWWhitespaceAdditions.h"
-//UIButton
-#import "UIButton+COWBackgroundColorAdditions.h"
-//UIImage
-#import "UIImage+COWColorAdditions.h"
-//UIColor
+//Header
 #import "UIColor+COWHexStringAdditions.h"
+//COW Macros
+#import "COW_Cast_Macros.h"
+
+// Implementation //
+@implementation UIColor (COWHexStringAdditions)
+
++ (UIColor *)cow_colorWithHexString:(NSString *)hexString
+{
+    //Check if string is valid.
+    if(!hexString || hexString.length != 6)
+        return nil;
+    
+    NSRange redRange   = NSMakeRange(0, 2);
+    NSRange greenRange = NSMakeRange(2, 2);
+    NSRange blueRange  = NSMakeRange(4, 2);
+    
+    return [UIColor cow_colorWithHexRed:[hexString substringWithRange:redRange]
+                               hexGreen:[hexString substringWithRange:greenRange]
+                                hexBlue:[hexString substringWithRange:blueRange]];
+}
+
++ (UIColor *)cow_colorWithHexRed:(NSString *)redHexString
+                        hexGreen:(NSString *)greenHexString
+                         hexBlue:(NSString *)blueHexString
+{
+    //Must have all components.
+    if(!redHexString || !greenHexString || !blueHexString)
+        return nil;
+    
+    int iRed, iGreen, iBlue;
+    
+    sscanf([redHexString   UTF8String], "%x", &iRed);
+    sscanf([greenHexString UTF8String], "%x", &iGreen);
+    sscanf([blueHexString  UTF8String], "%x", &iBlue);
+    
+    return [UIColor colorWithRed:iRed   / 255.0
+                           green:iGreen / 255.0
+                            blue:iBlue  / 255.0
+                           alpha:1];
+}
+
+- (NSString *)cow_hexString
+{
+    CGFloat fRed, fGreen, fBlue;
+    int     iRed, iGreen, iBlue;
+    
+    //Try to get the color components. If any error happened
+    //just return a nil value.
+    if(![self getRed:&fRed green:&fGreen blue:&fBlue alpha:NULL])
+        return nil;
+    
+    //Convert integer and scale to [0,255].
+    iRed   = COW_UKH_VAR_CAST(fRed   * 255, int);
+    iGreen = COW_UKH_VAR_CAST(fGreen * 255, int);
+    iBlue  = COW_UKH_VAR_CAST(fBlue  * 255, int);
+    
+    return [NSString stringWithFormat:@"%02x%02x%02x",iRed, iGreen, iBlue];
+}
+
+@end
