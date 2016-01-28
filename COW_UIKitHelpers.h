@@ -49,10 +49,10 @@
 #import "NSString+COWWhitespaceAdditions.h"
 //UIButton
 #import "UIButton+COWBackgroundColorAdditions.h"
+//UIColor
+#import "UIColor+COWHexStringAdditions.h"
 //UIImage
 #import "UIImage+COWColorAdditions.h"
 #import "UIImage+COWRoundedCornerAdditions.h"
-//UIColor
-#import "UIColor+COWHexStringAdditions.h"
 //UINavigationController
 #import "UINavigationController+COWShadowlessNavigationBar.h"
