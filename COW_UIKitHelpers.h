@@ -54,3 +54,5 @@
 #import "UIImage+COWRoundedCornerAdditions.h"
 //UIColor
 #import "UIColor+COWHexStringAdditions.h"
+//UINavigationController
+#import "UINavigationController+COWShadowlessNavigationBar.h"
