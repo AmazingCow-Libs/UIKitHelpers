@@ -2,7 +2,7 @@
 //               █      █                                                     //
 //               ████████                                                     //
 //             ██        ██                                                   //
-//            ███  █  █  ███        COW_UIKitHelpers.h                        //
+//            ███  █  █  ███        UIImage+COWRoundedCornerAdditions.h       //
 //            █ █        █ █        UIKitHelpers                              //
 //             ████████████                                                   //
 //           █              █       Copyright (c) 2015, 2016                  //
@@ -38,19 +38,14 @@
 //                                  Enjoy :)                                  //
 //----------------------------------------------------------------------------//
 
-// Macros //
-#import "COW_UIKitHelpers_Macros.h" //This is a umbrella header for all macros.
+// UIKit //
+#import <UIKit/UIKit.h>
 
-// Classes //
-#import "COWAlertView.h"
 
-// Categories //
-//NSString
-#import "NSString+COWWhitespaceAdditions.h"
-//UIButton
-#import "UIButton+COWBackgroundColorAdditions.h"
-//UIImage
-#import "UIImage+COWColorAdditions.h"
-#import "UIImage+COWRoundedCornerAdditions.h"
-//UIColor
-#import "UIColor+COWHexStringAdditions.h"
+// Public Interface //
+@interface UIImage (COWColorAdditions)
+
++ (UIImage *)cow_imageWithRoundedCornersSize:(float)cornerRadius
+                                  usingImage:(UIImage *)original;
+
+@end

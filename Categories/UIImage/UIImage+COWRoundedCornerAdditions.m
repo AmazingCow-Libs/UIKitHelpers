@@ -2,7 +2,7 @@
 //               █      █                                                     //
 //               ████████                                                     //
 //             ██        ██                                                   //
-//            ███  █  █  ███        COW_UIKitHelpers.h                        //
+//            ███  █  █  ███        UIImage+COWRoundedCornerAdditions.h       //
 //            █ █        █ █        UIKitHelpers                              //
 //             ████████████                                                   //
 //           █              █       Copyright (c) 2015, 2016                  //
@@ -38,19 +38,34 @@
 //                                  Enjoy :)                                  //
 //----------------------------------------------------------------------------//
 
-// Macros //
-#import "COW_UIKitHelpers_Macros.h" //This is a umbrella header for all macros.
 
-// Classes //
-#import "COWAlertView.h"
-
-// Categories //
-//NSString
-#import "NSString+COWWhitespaceAdditions.h"
-//UIButton
-#import "UIButton+COWBackgroundColorAdditions.h"
-//UIImage
-#import "UIImage+COWColorAdditions.h"
+//Header
 #import "UIImage+COWRoundedCornerAdditions.h"
-//UIColor
-#import "UIColor+COWHexStringAdditions.h"
+
+
+// Implementation //
+@implementation UIImage (COWRoundedCornerAdditions)
+
++ (UIImage *)cow_imageWithRoundedCornersSize:(float)cornerRadius
+                                  usingImage:(UIImage *)original
+{
+    CGRect frame = CGRectMake(0, 0, original.size.width, original.size.height);
+    
+    //Init the Graphics Context.
+    UIGraphicsBeginImageContextWithOptions(original.size, NO, 1.0);
+    
+    //Add the clip to frame.
+    [[UIBezierPath bezierPathWithRoundedRect:frame
+                                cornerRadius:cornerRadius] addClip];
+
+    //Draw your image and get the image.
+    [original drawInRect:frame];
+    id image = UIGraphicsGetImageFromCurrentImageContext();
+    
+    //End the Graphics Context.s
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
+
+@end
