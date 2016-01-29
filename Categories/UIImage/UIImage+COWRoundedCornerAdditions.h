@@ -43,7 +43,7 @@
 
 
 // Public Interface //
-@interface UIImage (COWColorAdditions)
+@interface UIImage (COWRoundedCornerAdditions)
 
 + (UIImage *)cow_imageWithRoundedCornersSize:(float)cornerRadius
                                   usingImage:(UIImage *)original;
