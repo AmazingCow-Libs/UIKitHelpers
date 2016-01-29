@@ -43,12 +43,14 @@
 ////////////////////////////////////////////////////////////////////////////////
 #define COW_UKH_INTERFACE_SINGLETON_OF(_type_) +(_type_ *)instance
 
-//COWTODO: Should use dispatch once.
 #define COW_UKH_IMPLEMENTATION_SINGLETON_OF(_type_) \
     +(_type_ *)instance                             \
     {                                               \
-        static _type_ *s_instance = nil;            \
-        if(s_instance == nil)                       \
+        static _type_          *s_instance = nil;   \
+        static dispatch_once_t onceToken;           \
+        dispatch_once(&onceToken, ^{                \
             s_instance = [[_type_ alloc] init];     \
+        });                                         \
+                                                    \
         return s_instance;                          \
     }
