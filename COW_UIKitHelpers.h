@@ -56,3 +56,5 @@
 #import "UIImage+COWRoundedCornerAdditions.h"
 //UINavigationController
 #import "UINavigationController+COWShadowlessNavigationBar.h"
+//UIView
+#import "UIView+COWCALayerAdditions.h"
