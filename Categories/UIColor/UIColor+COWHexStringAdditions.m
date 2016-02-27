@@ -2,7 +2,7 @@
 //               █      █                                                     //
 //               ████████                                                     //
 //             ██        ██                                                   //
-//            ███  █  █  ███        UIButton+COWHexStringAdditions.m          //
+//            ███  █  █  ███        UIColor+COWHexStringAdditions.m           //
 //            █ █        █ █        UIKitHelpers                              //
 //             ████████████                                                   //
 //           █              █       Copyright (c) 2015, 2016                  //
@@ -43,6 +43,7 @@
 //COW Macros
 #import "COW_Cast_Macros.h"
 
+
 // Implementation //
 @implementation UIColor (COWHexStringAdditions)
 
@@ -50,7 +51,16 @@
 {
     //Check if string is valid.
     if(!hexString || hexString.length != 6)
+    {
+        #if UIKITHELPERS_UICOLOR_ASSERT_ON_INVALID_VALUES != 0
+            NSAssert2(NO,
+                      @"UIColor+COWHexStringAdditions cow_colorWithHexString: Invalid hexString was given - Expected lengh(6) - Found %@ size: %ld",
+                      hexString,
+                      hexString.length);
+        #endif
+        
         return nil;
+    }
     
     NSRange redRange   = NSMakeRange(0, 2);
     NSRange greenRange = NSMakeRange(2, 2);

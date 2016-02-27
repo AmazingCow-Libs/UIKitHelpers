@@ -2,7 +2,7 @@
 //               █      █                                                     //
 //               ████████                                                     //
 //             ██        ██                                                   //
-//            ███  █  █  ███        UIButton+COWHexStringAdditions.h          //
+//            ███  █  █  ███        UIColor+COWHexStringAdditions.h           //
 //            █ █        █ █        UIKitHelpers                              //
 //             ████████████                                                   //
 //           █              █       Copyright (c) 2015, 2016                  //
@@ -40,6 +40,7 @@
 
 // UIKit //
 #import <UIKit/UIKit.h>
+
 
 // Public Interface //
 @interface UIColor (COWHexStringAdditions)
