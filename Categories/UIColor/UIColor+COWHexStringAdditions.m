@@ -52,7 +52,7 @@
     //Check if string is valid.
     if(!hexString || hexString.length != 6)
     {
-        #if UIKITHELPERS_UICOLOR_ASSERT_ON_INVALID_VALUES != 0
+        #if UIKITHELPERS_UICOLORCOW_HEXSTRINGADDITIONS_ASSERT_ON_INVALID_VALUES != 0
             NSAssert2(NO,
                       @"UIColor+COWHexStringAdditions cow_colorWithHexString: Invalid hexString was given - Expected lengh(6) - Found %@ size: %ld",
                       hexString,
