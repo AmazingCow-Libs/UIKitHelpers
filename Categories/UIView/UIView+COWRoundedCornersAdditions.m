@@ -2,7 +2,7 @@
 //               █      █                                                     //
 //               ████████                                                     //
 //             ██        ██                                                   //
-//            ███  █  █  ███        NSString+COWCALayerAdditions.h            //
+//            ███  █  █  ███        UIView+COWRoundedCornersAdditions.h       //
 //            █ █        █ █        UIKitHelpers                              //
 //             ████████████                                                   //
 //           █              █       Copyright (c) 2015, 2016                  //
@@ -38,19 +38,32 @@
 //                                  Enjoy :)                                  //
 //----------------------------------------------------------------------------//
 
-// UIKit //
-#import <UIKit/UIKit.h>
+//Header
+#import "UIView+COWRoundedCornersAdditions.h"
 
 
-// Public Interface //
-@interface UIView (COWCALayerAdditions)
+// Implementation //
+@implementation UIView (COWCALayerAdditions)
 
-- (void)cow_setRoundedCornersWithRadius:(float)radius;
-
-- (void)cow_setBorderColor:(UIColor *)color borderThickness:(float)thickness;
+// Radius //
+- (void)cow_setRoundedCornersWithRadius:(float)radius
+{
+    self.layer.cornerRadius = radius;
+}
 
 - (void)cow_setRoundedCornersWithRadius:(float)radius
-                            borderColor:(UIColor *)color
-                        borderThickness:(float)thickness;
+                               forCorners:(UIRectCorner)corners
+{
+    UIBezierPath* path = [UIBezierPath bezierPathWithRoundedRect:self.bounds
+                                                  byRoundingCorners:corners
+                                                        cornerRadii:CGSizeMake(radius, radius)];
+    
+    CAShapeLayer* shape = [[CAShapeLayer alloc] init];
+    [shape setPath:path.CGPath];
+
+    self.layer.mask = shape;
+}
+
+
 
 @end

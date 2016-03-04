@@ -2,7 +2,7 @@
 //               █      █                                                     //
 //               ████████                                                     //
 //             ██        ██                                                   //
-//            ███  █  █  ███        COW_UIKitHelpers.h                        //
+//            ███  █  █  ███        NSString+COWBorderColorAdditions.h        //
 //            █ █        █ █        UIKitHelpers                              //
 //             ████████████                                                   //
 //           █              █       Copyright (c) 2015, 2016                  //
@@ -38,24 +38,65 @@
 //                                  Enjoy :)                                  //
 //----------------------------------------------------------------------------//
 
-// Macros //
-#import "COW_UIKitHelpers_Macros.h" //This is a umbrella header for all macros.
-
-// Classes //
-#import "COWAlertView.h"
-
-// Categories //
-//NSString
-#import "NSString+COWWhitespaceAdditions.h"
-//UIButton
-#import "UIButton+COWBackgroundColorAdditions.h"
-//UIColor
-#import "UIColor+COWHexStringAdditions.h"
-//UIImage
-#import "UIImage+COWColorAdditions.h"
-#import "UIImage+COWRoundedCornerAdditions.h"
-//UINavigationController
-#import "UINavigationController+COWShadowlessNavigationBar.h"
-//UIView
+//Header
 #import "UIView+COWBorderColorAdditions.h"
-#import "UIView+COWRoundedCornersAdditions.h"
+
+
+// Implementation //
+@implementation UIView (COWBorderColorAdditions)
+
+- (void)cow_setBorderColor:(UIColor *)color
+             withThickness:(float)thickness
+{
+    self.layer.borderColor = color.CGColor;
+    self.layer.borderWidth = thickness;
+}
+
+
+- (void)cow_setBorderColor:(UIColor *)color
+                 withThickness:(float)thickness
+                  forEdges:(UIRectEdge)edges
+{
+    
+    if(edges & UIRectEdgeTop)
+    {
+        CALayer *border = [CALayer layer];
+        border.backgroundColor = color.CGColor;
+    
+        border.frame = CGRectMake(0,
+                                  0,
+                                  self.frame.size.width,
+                                  thickness);
+        
+        [self.layer addSublayer:border];
+    }
+    
+    
+    if(edges & UIRectEdgeBottom)
+    {
+        CALayer *border = [CALayer layer];
+        border.backgroundColor = color.CGColor;
+        
+        border.frame = CGRectMake(0,
+                                  self.frame.size.height - thickness,
+                                  self.frame.size.width,
+                                  thickness);
+        
+        [self.layer addSublayer:border];
+    }
+    
+    
+    if(edges & UIRectEdgeRight)
+    {
+        //COWTODO: Not implemented yet.
+        NSAssert(NO, @"Not implemented yet.");
+    }
+    
+    if(edges & UIRectEdgeLeft)
+    {
+        //COWTODO: Not implemented yet.
+        NSAssert(NO, @"Not implemented yet.");
+    }
+}
+
+@end

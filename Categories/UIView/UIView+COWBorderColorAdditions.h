@@ -2,7 +2,7 @@
 //               █      █                                                     //
 //               ████████                                                     //
 //             ██        ██                                                   //
-//            ███  █  █  ███        NSString+COWCALayerAdditions.h            //
+//            ███  █  █  ███        NSString+COWBorderColorAdditions.h        //
 //            █ █        █ █        UIKitHelpers                              //
 //             ████████████                                                   //
 //           █              █       Copyright (c) 2015, 2016                  //
@@ -38,29 +38,16 @@
 //                                  Enjoy :)                                  //
 //----------------------------------------------------------------------------//
 
-//Header
-#import "UIView+COWCALayerAdditions.h"
+// UIKit //
+#import <UIKit/UIKit.h>
 
 
-@implementation UIView (COWCALayerAdditions)
+// Public Interface //
+@interface UIView (COWBorderColorAdditions)
 
-- (void)cow_setRoundedCornersWithRadius:(float)radius
-{
-    self.layer.cornerRadius = radius;
-}
+- (void)cow_setBorderColor:(UIColor *)color
+             withThickness:(float)thickness;
 
-- (void)cow_setBorderColor:(UIColor *)color borderThickness:(float)thickness
-{
-    self.layer.borderColor = color.CGColor;
-    self.layer.borderWidth = thickness;
-}
 
-- (void)cow_setRoundedCornersWithRadius:(float)radius
-                            borderColor:(UIColor *)color
-                        borderThickness:(float)thickness
-{
-    [self cow_setRoundedCornersWithRadius:radius];
-    [self cow_setBorderColor:color borderThickness:thickness];
-}
 
 @end
