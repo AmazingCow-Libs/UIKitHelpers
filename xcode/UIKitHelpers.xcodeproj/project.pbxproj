@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2737FD611C89F8CE0074A925 /* UIView+COWBorderColorAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2737FD5E1C89F8CE0074A925 /* UIView+COWBorderColorAdditions.m */; };
+		2737FD621C89F8CE0074A925 /* UIView+COWRoundedCornersAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2737FD601C89F8CE0074A925 /* UIView+COWRoundedCornersAdditions.m */; };
 		2797BFD01C8128CD0028EA47 /* NSString+COWWhitespaceAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2797BFB31C8128CD0028EA47 /* NSString+COWWhitespaceAdditions.m */; };
 		2797BFD11C8128CD0028EA47 /* UIButton+COWBackgroundColorAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2797BFB61C8128CD0028EA47 /* UIButton+COWBackgroundColorAdditions.m */; };
 		2797BFD21C8128CD0028EA47 /* UIColor+COWHexStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2797BFB91C8128CD0028EA47 /* UIColor+COWHexStringAdditions.m */; };
 		2797BFD31C8128CD0028EA47 /* UIImage+COWColorAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2797BFBC1C8128CD0028EA47 /* UIImage+COWColorAdditions.m */; };
 		2797BFD41C8128CD0028EA47 /* UIImage+COWRoundedCornerAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2797BFBE1C8128CD0028EA47 /* UIImage+COWRoundedCornerAdditions.m */; };
 		2797BFD51C8128CD0028EA47 /* UINavigationController+COWShadowlessNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2797BFC11C8128CD0028EA47 /* UINavigationController+COWShadowlessNavigationBar.m */; };
-		2797BFD61C8128CD0028EA47 /* UIView+COWCALayerAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2797BFC41C8128CD0028EA47 /* UIView+COWCALayerAdditions.m */; };
 		2797BFD71C8128CD0028EA47 /* COWAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2797BFC71C8128CD0028EA47 /* COWAlertView.m */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2737FD5D1C89F8CE0074A925 /* UIView+COWBorderColorAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+COWBorderColorAdditions.h"; sourceTree = "<group>"; };
+		2737FD5E1C89F8CE0074A925 /* UIView+COWBorderColorAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+COWBorderColorAdditions.m"; sourceTree = "<group>"; };
+		2737FD5F1C89F8CE0074A925 /* UIView+COWRoundedCornersAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+COWRoundedCornersAdditions.h"; sourceTree = "<group>"; };
+		2737FD601C89F8CE0074A925 /* UIView+COWRoundedCornersAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+COWRoundedCornersAdditions.m"; sourceTree = "<group>"; };
 		2797BFA41C8128A10028EA47 /* libUIKitHelpers.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUIKitHelpers.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2797BFB21C8128CD0028EA47 /* NSString+COWWhitespaceAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+COWWhitespaceAdditions.h"; sourceTree = "<group>"; };
 		2797BFB31C8128CD0028EA47 /* NSString+COWWhitespaceAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+COWWhitespaceAdditions.m"; sourceTree = "<group>"; };
@@ -43,8 +48,6 @@
 		2797BFBE1C8128CD0028EA47 /* UIImage+COWRoundedCornerAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+COWRoundedCornerAdditions.m"; sourceTree = "<group>"; };
 		2797BFC01C8128CD0028EA47 /* UINavigationController+COWShadowlessNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+COWShadowlessNavigationBar.h"; sourceTree = "<group>"; };
 		2797BFC11C8128CD0028EA47 /* UINavigationController+COWShadowlessNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+COWShadowlessNavigationBar.m"; sourceTree = "<group>"; };
-		2797BFC31C8128CD0028EA47 /* UIView+COWCALayerAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+COWCALayerAdditions.h"; sourceTree = "<group>"; };
-		2797BFC41C8128CD0028EA47 /* UIView+COWCALayerAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+COWCALayerAdditions.m"; sourceTree = "<group>"; };
 		2797BFC61C8128CD0028EA47 /* COWAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COWAlertView.h; sourceTree = "<group>"; };
 		2797BFC71C8128CD0028EA47 /* COWAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COWAlertView.m; sourceTree = "<group>"; };
 		2797BFC81C8128CD0028EA47 /* COW_UIKitHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = COW_UIKitHelpers.h; path = ../COW_UIKitHelpers.h; sourceTree = "<group>"; };
@@ -150,8 +153,10 @@
 		2797BFC21C8128CD0028EA47 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
-				2797BFC31C8128CD0028EA47 /* UIView+COWCALayerAdditions.h */,
-				2797BFC41C8128CD0028EA47 /* UIView+COWCALayerAdditions.m */,
+				2737FD5D1C89F8CE0074A925 /* UIView+COWBorderColorAdditions.h */,
+				2737FD5E1C89F8CE0074A925 /* UIView+COWBorderColorAdditions.m */,
+				2737FD5F1C89F8CE0074A925 /* UIView+COWRoundedCornersAdditions.h */,
+				2737FD601C89F8CE0074A925 /* UIView+COWRoundedCornersAdditions.m */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -236,9 +241,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2737FD611C89F8CE0074A925 /* UIView+COWBorderColorAdditions.m in Sources */,
 				2797BFD21C8128CD0028EA47 /* UIColor+COWHexStringAdditions.m in Sources */,
-				2797BFD61C8128CD0028EA47 /* UIView+COWCALayerAdditions.m in Sources */,
 				2797BFD31C8128CD0028EA47 /* UIImage+COWColorAdditions.m in Sources */,
+				2737FD621C89F8CE0074A925 /* UIView+COWRoundedCornersAdditions.m in Sources */,
 				2797BFD41C8128CD0028EA47 /* UIImage+COWRoundedCornerAdditions.m in Sources */,
 				2797BFD01C8128CD0028EA47 /* NSString+COWWhitespaceAdditions.m in Sources */,
 				2797BFD71C8128CD0028EA47 /* COWAlertView.m in Sources */,
