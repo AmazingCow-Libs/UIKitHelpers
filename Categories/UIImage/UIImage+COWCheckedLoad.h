@@ -2,7 +2,7 @@
 //               █      █                                                     //
 //               ████████                                                     //
 //             ██        ██                                                   //
-//            ███  █  █  ███        COW_UIKitHelpers.h                        //
+//            ███  █  █  ███        UIImage+COWCheckedLoad                    //
 //            █ █        █ █        UIKitHelpers                              //
 //             ████████████                                                   //
 //           █              █       Copyright (c) 2015, 2016                  //
@@ -38,30 +38,13 @@
 //                                  Enjoy :)                                  //
 //----------------------------------------------------------------------------//
 
-// Macros //
-#import "COW_UIKitHelpers_Macros.h" //This is a umbrella header for all macros.
+// UIKit //
+#import <UIKit/UIKit.h>
 
-// Classes //
-#import "COWAlertView.h"
 
-// Categories //
-//NSString
-#import "NSString+COWWhitespaceAdditions.h"
+// Public Interface //
+@interface UIImage (COWCheckedLoad)
 
-//UIButton
-#import "UIButton+COWBackgroundColorAdditions.h"
++ (UIImage *)cow_imageNamed:(NSString *)name;
 
-//UIColor
-#import "UIColor+COWHexStringAdditions.h"
-
-//UIImage
-#import "UIImage+COWColorAdditions.h"
-#import "UIImage+COWRoundedCornerAdditions.h"
-#import "UIImage+COWCheckedLoad.h"
-
-//UINavigationController
-#import "UINavigationController+COWShadowlessNavigationBar.h"
-
-//UIView
-#import "UIView+COWBorderColorAdditions.h"
-#import "UIView+COWRoundedCornersAdditions.h"
+@end

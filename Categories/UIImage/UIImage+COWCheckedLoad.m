@@ -2,7 +2,7 @@
 //               █      █                                                     //
 //               ████████                                                     //
 //             ██        ██                                                   //
-//            ███  █  █  ███        COW_UIKitHelpers.h                        //
+//            ███  █  █  ███        UIImage+COWCheckedLoad.m                  //
 //            █ █        █ █        UIKitHelpers                              //
 //             ████████████                                                   //
 //           █              █       Copyright (c) 2015, 2016                  //
@@ -38,30 +38,21 @@
 //                                  Enjoy :)                                  //
 //----------------------------------------------------------------------------//
 
-// Macros //
-#import "COW_UIKitHelpers_Macros.h" //This is a umbrella header for all macros.
 
-// Classes //
-#import "COWAlertView.h"
-
-// Categories //
-//NSString
-#import "NSString+COWWhitespaceAdditions.h"
-
-//UIButton
-#import "UIButton+COWBackgroundColorAdditions.h"
-
-//UIColor
-#import "UIColor+COWHexStringAdditions.h"
-
-//UIImage
-#import "UIImage+COWColorAdditions.h"
-#import "UIImage+COWRoundedCornerAdditions.h"
+//Header
 #import "UIImage+COWCheckedLoad.h"
 
-//UINavigationController
-#import "UINavigationController+COWShadowlessNavigationBar.h"
 
-//UIView
-#import "UIView+COWBorderColorAdditions.h"
-#import "UIView+COWRoundedCornersAdditions.h"
+// Implementation //
+@implementation UIImage (COWCheckedLoad)
+
++ (UIImage *)cow_imageNamed:(NSString *)name
+{
+    UIImage *image = [UIImage imageNamed:name];
+    NSAssert1(image, @"Cannot load image with name: (%@)", name);
+    
+    return image;
+}
+
+
+@end
